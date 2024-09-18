@@ -20,6 +20,10 @@ div#product-container {
  
 }
 
+#content {
+  display: flex;
+}
+
 div > h1#title {
   color: hsl(14, 65%, 9%);
   margin-left: 45px;
@@ -59,18 +63,19 @@ div.product-infos {
 
 p.product-category {
   font-size: 12px;
-  color: gray;
+  color: hsl(14, 25%, 72%);
   margin-bottom: 5px;
 }
 
 h2.product-name {
   font-size: 16px;
   margin-bottom: 5px;
+  color: hsl(14, 65%, 9%);
 }
 
 p.product-price {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   color: hsl(14, 86%, 42%);
   margin-bottom: 5px;
 
