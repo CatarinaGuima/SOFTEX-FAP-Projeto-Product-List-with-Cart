@@ -11,58 +11,64 @@ body {
   background-color: hsl(13, 31%, 94%);
 }
 
-div#produto-container {
+div#product-container {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
   position: relative;
   display: inline-block;
+ 
 }
 
 div > h1#title {
   color: hsl(14, 65%, 9%);
-  margin-left: 30px;
-  margin-bottom: 2rem;
+  margin-left: 45px;
+  margin-bottom: 0.2rem;
 }
 
-section#produto-list {
+section#product-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
+  padding: 20px;
   margin-left: 25px;
 }
 
-div.produto {
-  width: 25%;
-  height: 25%;
+div.product {
+  width: 250px;
+  height: 350px;
   text-align: center;
-  justify-content: center;
   margin-bottom: 20px;
+  background-color: hsl(20, 50%, 98%);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-div > img.produto-imagem {
-  width: 100%;
+div > img.product-image {
+  width: 90%;
   height: auto;
+  margin-top: 10px;
   border-radius: 8px;
 }
 
-div.produto-infos {
+div.product-infos {
   text-align: left;
+  margin-left: 10px;
 }
 
-p.produto-categoria {
+p.product-category {
   font-size: 12px;
   color: gray;
   margin-bottom: 5px;
 }
 
-h2.produto-nome {
+h2.product-name {
   font-size: 16px;
   margin-bottom: 5px;
 }
 
-p.produto-valor {
+p.product-price {
   font-size: 14px;
   font-weight: bold;
   color: hsl(14, 86%, 42%);
@@ -70,7 +76,7 @@ p.produto-valor {
 
 }
 
-button.produto-btn {
+button.product-btn {
   margin-bottom: 10px;
   font-size: 12px;
   font-weight: bolder;
@@ -82,10 +88,39 @@ button.produto-btn {
   cursor: pointer;
 }
 
+button.product-btn:hover {
+  background-color: hsl(20, 60%, 90%);
+  transition: background-color 0.3s ease;
+}
+
+
+
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+  section#product-list {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  div.product {
+    flex: 1 1 46%;
+  }
+}
+
+@media (max-width: 480px) {
+  section#product-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  div.product {
+    flex: 1 1 100%;
+  }
 }
