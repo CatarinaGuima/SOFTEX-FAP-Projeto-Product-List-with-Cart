@@ -9,15 +9,15 @@
 body {
   font-family: "Red Hat Text", sans-serif;
   background-color: hsl(13, 31%, 94%);
+  padding: 2rem;
 }
 
 div#product-container {
   width: 90%;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 20px;
   position: relative;
-  display: inline-block;
- 
 }
 
 #content {
@@ -26,27 +26,33 @@ div#product-container {
 
 div > h1#title {
   color: hsl(14, 65%, 9%);
-  margin-left: 45px;
+  margin-left: 1.5rem;
   margin-bottom: 0.2rem;
+  font-size: 2rem;
 }
 
 section#product-list {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
   padding: 20px;
-  margin-left: 25px;
 }
 
 div.product {
-  width: 250px;
-  height: 350px;
+  width: 100%;
+  max-width: 225px;
+  height: 320px;
   text-align: center;
-  margin-bottom: 20px;
   background-color: hsl(20, 50%, 98%);
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; 
+}
+
+div.product:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
 
 div > img.product-image {
@@ -54,11 +60,18 @@ div > img.product-image {
   height: auto;
   margin-top: 10px;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+div.product:hover img.product-image {
+  transform: scale(1.05);
 }
 
 div.product-infos {
+  margin-top: 15px;
   text-align: left;
   margin-left: 10px;
+  padding: 10px 0;
 }
 
 p.product-category {
@@ -69,7 +82,7 @@ p.product-category {
 
 h2.product-name {
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: hsl(14, 65%, 9%);
 }
 
@@ -77,55 +90,49 @@ p.product-price {
   font-size: 14px;
   font-weight: 700;
   color: hsl(14, 86%, 42%);
-  margin-bottom: 5px;
-
+  margin-bottom: 20px;
 }
 
 button.product-btn {
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: bolder;
-  padding: 8px 16px;
+  position: absolute; 
+  width: 9.5rem;
+  top: 58%; 
+  left: 15%; 
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
   background-color: hsl(20, 50%, 98%);
   color: hsl(12, 20%, 44%);
-  border: 1px solid black;
-  border-radius: 14px;
+  border: 1px solid hsl(12, 20%, 44%);
+  border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button.product-btn:hover {
-  background-color: hsl(20, 60%, 90%);
-  transition: background-color 0.3s ease;
+  background-color: hsl(14, 86%, 42%);
+  color: white;
 }
 
+section#product-cart {
+  max-height: 45rem;
+  padding: 15px 15px;
+  color: hsl(14, 86%, 42%);
+  width: 60rem;
+  background-color: hsl(20, 50%, 98%);
+  border-radius: 8px;
+}
 
 
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-@media (max-width: 768px) {
-  section#product-list {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  div.product {
-    flex: 1 1 46%;
-  }
-}
-
-@media (max-width: 480px) {
-  section#product-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  div.product {
-    flex: 1 1 100%;
-  }
 }
