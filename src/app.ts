@@ -1,11 +1,14 @@
 import data from '../data.json';
-import { Product } from './entities/product';
+import { Product } from './entities/product.ts';
 
-for (const product of data) {
-     new Product(
-        product.name,
-        product.price,
-        product.category,
-        product.image.desktop
+document.addEventListener("DOMContentLoaded", () => {
+  for (const productData of data) {
+    const product = new Product(
+      productData.name,
+      productData.price,
+      productData.category,
+      productData.image.desktop
     );
-}
+    product.render();
+  }
+});
