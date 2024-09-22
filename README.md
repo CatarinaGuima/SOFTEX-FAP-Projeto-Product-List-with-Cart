@@ -50,4 +50,3 @@ Users should be able to:
 ## Author
 
 - Este material de estudos é desenvolvido e mantido com ❤️ por [Catarina Guimarães](https://github.com/catarinaguima) 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
