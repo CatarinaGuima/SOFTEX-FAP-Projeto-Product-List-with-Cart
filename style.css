@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
+:root {
+  --color-primary: hsl(14, 86%, 42%);
+  --color-secondary: hsl(14, 65%, 9%);
+  --color-light: hsl(20, 50%, 98%);
+  --color-muted: hsl(12, 20%, 44%);
+  --color-background: hsl(13, 31%, 94%);
+  --color-highlight: hsl(14, 25%, 72%);
+  --font-family: "Red Hat Text", sans-serif;
+  --font-size-base: 14px;
+  --border-radius: 8px;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,13 +20,13 @@
 }
 
 body {
-  font-family: "Red Hat Text", sans-serif;
-  background-color: hsl(13, 31%, 94%);
+  font-family: var(--font-family);
+  background-color: var(--color-background);
   padding: 2rem;
 }
 
-header > h1#title {
-  color: hsl(14, 65%, 9%);
+h1#title {
+  color: var(--color-secondary);
   margin-left: 4rem;
   margin-bottom: 0.2rem;
   font-size: 2rem;
@@ -32,7 +45,6 @@ div#product-container {
   position: relative;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 20px;
 }
 
 div.product {
@@ -40,9 +52,9 @@ div.product {
   max-width: 225px;
   height: 320px;
   text-align: center;
-  background-color: hsl(20, 50%, 98%);
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   position: relative;
 }
 
@@ -50,11 +62,11 @@ div.product:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
 
-div > img.product-image {
+.product-image {
   width: 90%;
   height: auto;
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 div.product-infos {
@@ -64,22 +76,22 @@ div.product-infos {
   padding: 10px 0;
 }
 
-p.product-category {
+.product-category {
   font-size: 12px;
-  color: hsl(14, 25%, 72%);
+  color: var(--color-highlight);
   margin-bottom: 5px;
 }
 
-h2.product-name {
+.product-name {
   font-size: 16px;
   margin-bottom: 8px;
-  color: hsl(14, 65%, 9%);
+  color: var(--color-secondary);
 }
 
-p.product-price {
-  font-size: 14px;
+.product-price {
+  font-size: var(--font-size-base);
   font-weight: 700;
-  color: hsl(14, 86%, 42%);
+  color: var(--color-primary);
   margin-bottom: 20px;
 }
 
@@ -104,18 +116,18 @@ button.product-btn {
 }
 
 button.product-btn:hover {
-  background-color: hsl(13, 31%, 94%);
-  color: hsl(12, 20%, 44%);
+  background-color: var(--color-background);
+  color: var(--color-muted);
 }
 
 section#product-cart {
   width: 25rem;
   max-height: 30rem;
   margin-right: 50px;
-  padding: 15px 15px;
-  color: hsl(14, 86%, 42%);
-  background-color: hsl(20, 50%, 98%);
-  border-radius: 8px;
+  padding: 15px;
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  border-radius: var(--border-radius);
 }
 
 .product-empty-cart {
@@ -125,10 +137,10 @@ section#product-cart {
 
 .product-cart-message {
   padding-top: 1rem;
-  font-size: 14px;
+  font-size: var(--font-size-base);
   font-weight: 600;
   margin-left: 1rem;
-  color: hsl(12, 20%, 44%);
+  color: var(--color-muted);
 }
 
 .qtd-food {
@@ -168,8 +180,8 @@ section#product-cart {
 }
 
 .bordered {
-  border: 2px solid hsl(14, 86%, 42%);
-  border-radius: 8px;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
 }
 
 .attribution a {
