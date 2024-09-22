@@ -95,7 +95,7 @@ div.product-infos {
   margin-bottom: 20px;
 }
 
-button.product-btn {
+button.product-btn, .qtd-food {
   position: absolute;
   width: 9.5rem;
   top: 58%;
@@ -104,15 +104,20 @@ button.product-btn {
   justify-items: center;
   align-items: center;
   gap: 0.5rem;
-  font-size: 14px;
+  font-size: var(--font-size-base);
   font-weight: 600;
   padding: 10px 20px;
-  background-color: hsl(20, 50%, 98%);
-  color: hsl(12, 20%, 44%);
-  border: 1px solid hsl(12, 20%, 44%);
+  background-color: var(--color-light);
+  color: var(--color-muted);
+  border: 1px solid var(--color-muted);
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.qtd-food {
+  background-color: var(--color-primary);
+  color: var(--color-light);
 }
 
 button.product-btn:hover {
@@ -145,24 +150,8 @@ section#product-cart {
 
 .qtd-food {
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 9.5rem;
-  top: 58%;
-  left: 15%;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 10px 20px;
-  border: 1px solid hsl(14, 86%, 42%);
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  background-color: hsl(14, 86%, 42%);
-  color: hsl(20, 50%, 98%);
+  background-color: var(--color-primary);
+  color: var(--color-light);
 }
 
 .icons-qtd {
@@ -170,7 +159,7 @@ section#product-cart {
   height: 16px;
   padding: 2px;
   margin: 0 35px;
-  border: 1px solid hsl(20, 50%, 98%);
+  border: 1px solid var(--color-light);
   border-radius: 50%;
 }
 
