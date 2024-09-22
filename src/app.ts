@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
       productData.price,
       productData.category,
       productData.image.desktop
-    );
+    ); 
     product.render();
+    product.chooseFood();
+   
   }
 });

@@ -43,12 +43,10 @@ div.product {
   background-color: hsl(20, 50%, 98%);
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
 div.product:hover {
-  transform: scale(1.05);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
 
@@ -57,11 +55,6 @@ div > img.product-image {
   height: auto;
   margin-top: 10px;
   border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-div.product:hover img.product-image {
-  transform: scale(1.05);
 }
 
 div.product-infos {
@@ -111,8 +104,8 @@ button.product-btn {
 }
 
 button.product-btn:hover {
-  background-color: hsl(14, 86%, 42%);
-  color: white;
+  background-color: hsl(13, 31%, 94%);
+  color: hsl(12, 20%, 44%);
 }
 
 section#product-cart {
@@ -138,9 +131,45 @@ section#product-cart {
   color: hsl(12, 20%, 44%);
 }
 
+.qtd-food {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 9.5rem;
+  top: 58%;
+  left: 15%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 1px solid hsl(14, 86%, 42%);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+}
+
+.icons-qtd {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  margin: 0 35px;
+  border: 1px solid hsl(20, 50%, 98%);
+  border-radius: 50%;
+}
+
 .attribution {
   font-size: 10px;
   text-align: center;
+}
+
+.bordered {
+  border: 2px solid hsl(14, 86%, 42%);
+  border-radius: 8px;
 }
 
 .attribution a {
