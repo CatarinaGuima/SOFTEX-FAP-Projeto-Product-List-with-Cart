@@ -8,6 +8,7 @@ export class Product {
   private _price: number;
   private _category: string;
   private _imageUrl: string;
+  private _quantity: number = 0;
 
   //Construtor da classe Product
   constructor(name: string, price: number, category: string, imageUrl: string) {
@@ -17,12 +18,29 @@ export class Product {
     this._imageUrl = imageUrl;
   }
 
+  get quantity() {
+    return this._quantity;
+  }
+
+  set quantity(quantity: number) {
+    this._quantity += quantity;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  get price() {
+    return this._price;
+  }
+
+
   //Método para escolher a quantidade de cada prato
   chooseFood() {
     const idFood = document.getElementById(this._id);
     const btnFood = idFood?.querySelector(".product-btn");
     const productImage = idFood?.querySelector(".product-image"); // Seleciona a imagem do produto
-    let count = 0;
+    let count = 1;
 
     if (btnFood) {
       btnFood.addEventListener("click", () => {
@@ -50,7 +68,7 @@ export class Product {
         const incrementBtn = btnFood.querySelector("#increment");
 
         decrementBtn?.addEventListener("click", () => {
-          if (count > 0) {
+          if (count > 1) {
             count--;
             updateContent(); // Atualiza o conteúdo após decremento
           }

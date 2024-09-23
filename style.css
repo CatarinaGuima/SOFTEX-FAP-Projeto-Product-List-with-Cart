@@ -163,6 +163,11 @@ section#product-cart {
   border-radius: 50%;
 }
 
+/* .icons-qtd:hover {
+  background-color: var(--color-light);
+  fill: var(--color-primary);
+} */
+
 .attribution {
   font-size: 10px;
   text-align: center;
