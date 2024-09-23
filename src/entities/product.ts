@@ -89,9 +89,8 @@ export class Product {
     productContainer.id = this._id;
     productContainer.innerHTML = `
         <div class="product-shop">
-          <img src="${this._imageUrl}" alt="${
-      this._name
-    }" class="product-image" />
+          <img class="product-image" src="${this._imageUrl}" alt="${
+      this._name}"  />
           <button class="product-btn">
             <img src="./assets/images/icon-add-to-cart.svg" alt="icon-add-to-cart">
             <p>Add to Cart</p> 
