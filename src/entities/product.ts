@@ -1,5 +1,6 @@
 //Importações necessárias
 import { v4 as randomUUID } from "uuid";
+import { ShoppingCart } from "./shoppingCart";
 
 //Classe Product
 export class Product {
@@ -9,6 +10,7 @@ export class Product {
   private _category: string;
   private _imageUrl: string;
   private _quantity: number = 0;
+  private _total: number = 0;
 
   //Construtor da classe Product
   constructor(name: string, price: number, category: string, imageUrl: string) {
@@ -18,12 +20,32 @@ export class Product {
     this._imageUrl = imageUrl;
   }
 
+  updateTotal() {
+    this._total = this._price * this._quantity;
+  }
+
+  incrementQuantity() {
+    this._quantity++;
+    this.updateTotal();
+
+    ShoppingCart.addToCart(this); // Colocando toda a referência da classe Product
+  }
+
+  decrementQuantity() {
+    this._quantity--;
+    this.updateTotal();
+  }
+
+  get total() {
+    return this._total;
+  }
+
   get quantity() {
     return this._quantity;
   }
 
   set quantity(quantity: number) {
-    this._quantity += quantity;
+    this._quantity = quantity;
   }
 
   get name() {
@@ -34,13 +56,11 @@ export class Product {
     return this._price;
   }
 
-
   //Método para escolher a quantidade de cada prato
   chooseFood() {
     const idFood = document.getElementById(this._id);
     const btnFood = idFood?.querySelector(".product-btn");
     const productImage = idFood?.querySelector(".product-image"); // Seleciona a imagem do produto
-    let count = 1;
 
     if (btnFood) {
       btnFood.addEventListener("click", () => {
@@ -50,7 +70,7 @@ export class Product {
         const updateContent = () => {
           btnFood.innerHTML = `
             <div id="decrement"><img class="icons-qtd" src="./assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
-            ${count}
+            ${this.quantity + 1}
             <div id="increment"><img class="icons-qtd" src="./assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
           `;
         };
@@ -68,14 +88,14 @@ export class Product {
         const incrementBtn = btnFood.querySelector("#increment");
 
         decrementBtn?.addEventListener("click", () => {
-          if (count > 1) {
-            count--;
+          if (this.quantity >= 1) {
+            this.quantity--;
             updateContent(); // Atualiza o conteúdo após decremento
           }
         });
 
         incrementBtn?.addEventListener("click", () => {
-          count++;
+          this.quantity++;
           updateContent(); // Atualiza o conteúdo após incremento
         });
       });
@@ -90,7 +110,8 @@ export class Product {
     productContainer.innerHTML = `
         <div class="product-shop">
           <img class="product-image" src="${this._imageUrl}" alt="${
-      this._name}"  />
+      this._name
+    }"  />
           <button class="product-btn">
             <img src="./assets/images/icon-add-to-cart.svg" alt="icon-add-to-cart">
             <p>Add to Cart</p> 

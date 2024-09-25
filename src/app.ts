@@ -2,7 +2,6 @@ import data from "../data.json";
 import { Product } from "./entities/product.ts";
 import { ShoppingCart } from "./entities/shoppingCart.ts";
 
-
 document.addEventListener("DOMContentLoaded", () => {
   for (const productData of data) {
     const product = new Product(
@@ -16,25 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const product1 = new Product(
-  data[0].name,
-  data[0].price,
-  data[0].category,
-  data[0].image.desktop
-);
+// const product1 = new Product(
+//   data[0].name,
+//   data[0].price,
+//   data[0].category,
+//   data[0].image.desktop
+// );
 
-const product2 = new Product(
-  data[1].name,
-  data[1].price,
-  data[1].category,
-  data[1].image.desktop
-);
+// product1.incrementQuantity();
+// product1.incrementQuantity();
+// product1.incrementQuantity();
+// product1.decrementQuantity();
+// console.log(product1)
+// console.log(ShoppingCart.products);
 
-const cart = new ShoppingCart();
+// const product2 = new Product(
+//   data[1].name,
+//   data[1].price,
+//   data[1].category,
+//   data[1].image.desktop
+// );
 
-cart.addToCart(product1);
-cart.addToCart(product2);
+// const cart = new ShoppingCart();
 
-console.log(cart.products);
-console.log(cart.products.length);
-console.log(cart.total);
+// cart.addToCart(product1);
+// cart.addToCart(product2);
+
+// console.log(cart.products);
+// console.log(cart.products.length);
+// console.log(cart.total);
