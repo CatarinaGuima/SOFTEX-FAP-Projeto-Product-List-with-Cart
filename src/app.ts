@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       productData.image.desktop
     );
     product.render();
-    product.chooseFood();
+    product.chooseQtdFood();
   }
 });
 

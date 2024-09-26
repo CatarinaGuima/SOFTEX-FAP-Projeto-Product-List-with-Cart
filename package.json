@@ -18,10 +18,12 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "sass": "^1.79.3",
+    "sass-loader": "^16.0.2",
     "tailwindcss": "^3.4.13",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2",
-    "vite": "^5.4.6"
+    "vite": "^5.4.6",
+    "webpack": "^5.95.0"
   },
   "dependencies": {
     "uuid": "^10.0.0"
