@@ -159,5 +159,7 @@ export class Product {
     } else {
       console.error("Elemento #product-container não encontrado no DOM.");
     }
+
+    this.chooseQtdFood() // Chama a instância do método da classe Product
   }
 }
