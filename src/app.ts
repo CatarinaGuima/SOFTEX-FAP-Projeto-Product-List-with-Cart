@@ -9,38 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
       productData.price,
       productData.category,
       productData.image.desktop
-    );
+    )
     product.render();
     product.chooseQtdFood();
   }
 });
 
-// const product1 = new Product(
-//   data[0].name,
-//   data[0].price,
-//   data[0].category,
-//   data[0].image.desktop
-// );
+/*
+const banana = new Product("Banana", 10, "Fruta", "http://image.com");
+const uva = new Product("uva", 5, "Fruta", "http://image.com");
 
-// product1.incrementQuantity();
-// product1.incrementQuantity();
-// product1.incrementQuantity();
-// product1.decrementQuantity();
-// console.log(product1)
-// console.log(ShoppingCart.products);
-
-// const product2 = new Product(
-//   data[1].name,
-//   data[1].price,
-//   data[1].category,
-//   data[1].image.desktop
-// );
-
-// const cart = new ShoppingCart();
-
-// cart.addToCart(product1);
-// cart.addToCart(product2);
-
-// console.log(cart.products);
-// console.log(cart.products.length);
-// console.log(cart.total);
+banana.incrementQuantity();
+banana.incrementQuantity();
+banana.incrementQuantity();
+uva.incrementQuantity();
+uva.incrementQuantity();
+console.log(Cart);
+Cart.removeProduct(banana);
+console.log(Cart);
+*/
