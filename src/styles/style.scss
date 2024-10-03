@@ -7,10 +7,11 @@
 // Variáveis globais
 $color-primary: hsl(14, 86%, 42%);
 $color-secondary: hsl(14, 65%, 9%);
-$color-light: hsl(20, 50%, 98%);
-$color-muted: hsl(12, 20%, 44%);
 $color-background: hsl(13, 31%, 94%);
+$color-light: hsl(20, 50%, 98%);
+$color-mutedlight:  hsl(7, 20%, 60%);
 $color-highlight: hsl(14, 25%, 72%);
+$color-muted: hsl(12, 20%, 44%);
 $font-family: "Red Hat Text", sans-serif;
 $font-size-base: 14px;
 $border-radius: 8px;
@@ -52,7 +53,6 @@ display: flex;
   gap: 2rem;
 }
 
-// Estilos dos produtos
 .product {
   width: 100%;
   max-width: 225px;
@@ -87,13 +87,13 @@ display: flex;
 
 .product-category {
   font-size: 12px;
-  color: $color-highlight;
+  color: $color-mutedlight;
   margin-bottom: 5px;
 }
 
 .product-name {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 650;
   margin-bottom: 8px;
   color: $color-secondary;
 }
@@ -135,16 +135,16 @@ button.product-btn,
 
 button.product-btn:hover {
   background-color: $color-background;
-  color: $color-muted;
+  color: $color-primary;
+  border-color: $color-primary;
 }
 
-// Estilos do carrinho
-#product-cart {
+.product-cart {
   width: 25rem;
-  max-height: 30rem;
+  height: 30rem;
   margin-top: 2rem;
   margin-right: 6rem;
-  padding: 15px;
+  padding: 1.5rem;
   background-color: $color-light;
   color: $color-primary;
   border-radius: $border-radius;
@@ -172,7 +172,84 @@ button.product-btn:hover {
   border-radius: 50%;
 }
 
-// Estilos do rodapé
+.title-cart {
+  margin-bottom: 1rem;
+}
+
+#product-list-cart {
+  list-style: none;
+  margin: 1rem 0.5rem;
+}
+
+.list-cart {
+  list-style: none;
+}
+
+.product-cart-name {
+  font-size: 14px;
+  font-weight: 650;
+  color: $color-secondary;
+}
+
+.product-cart-infos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.product-cart-quantity {
+  font-size: 14px;
+  font-weight: 700;
+  color: $color-primary;
+  padding-right: 1rem;
+}
+
+.product-cart-price {
+  width: 4rem;
+  font-size: 12.5px;
+  font-weight: 450;
+  color: $color-mutedlight;
+}
+
+.product-cart-total {
+  font-size: 14px;
+  font-weight: 450;
+  color: $color-muted;
+  padding-right: 6rem;
+}
+
+.product-cart-image {
+  justify-items: center;
+  font-size: 8px;
+  border: 1.8px solid $color-muted;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.order-total-cart {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: $color-primary;
+  margin-top: 1rem;
+}
+
+.order-total-msg {
+  font-size: 12px;
+  color: $color-muted;
+}
+
+.order-total-value {
+  font-size: 18px;
+  font-weight: bolder;
+  color: $color-secondary
+} 
+
 .attribution {
   font-size: 10px;
   text-align: center;

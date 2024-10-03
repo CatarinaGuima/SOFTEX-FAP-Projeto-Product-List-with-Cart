@@ -36,9 +36,8 @@ export class Product {
 
   // Define a quantidade
   set quantity(quantity: number) {
-    if (quantity >= 0) {
+    if (quantity >= 1) {
       this._quantity = quantity;
-      this.updateTotal();
     }
   }
 
@@ -58,7 +57,7 @@ export class Product {
   }
 
   private updateCart() {
-    if (this._quantity > 0) {
+    if (this._quantity >= 1) {
       ShoppingCart.addToCart(this); // Atualiza o carrinho com o produto
     } else {
       ShoppingCart.removeProduct(this);
@@ -69,13 +68,19 @@ export class Product {
   incrementQuantity() {
     this._quantity++;
     this.updateCart();
+    this.updateTotal();
+
+    ShoppingCart.addToCart(this);
   }
 
   // Decrementa a quantidade do produto
   decrementQuantity() {
-    if (this._quantity > 0) {
+    if (this._quantity >= 1) {
       this._quantity--;
       this.updateCart();
+      this.updateTotal();
+
+      ShoppingCart.toHTML();
     }
   }
 
@@ -88,6 +93,8 @@ export class Product {
     if (btnFood) {
       btnFood.addEventListener("click", () => {
         btnFood.classList.replace("product-btn", "qtd-food");
+       
+        
         // Inicializa o conteúdo
         this.updateContent(btnFood);
 
@@ -106,7 +113,7 @@ export class Product {
   private updateContent(btnFood: Element) {
     btnFood.innerHTML = `
       <div id="decrement"><img class="icons-qtd" src="./assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
-      ${this.quantity + 1}
+      ${this.quantity} 
       <div id="increment"><img class="icons-qtd" src="./assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
     `;
   }
@@ -160,6 +167,6 @@ export class Product {
       console.error("Elemento #product-container não encontrado no DOM.");
     }
 
-    this.chooseQtdFood() // Chama a instância do método da classe Product
+    this.chooseQtdFood(); // Chama a instância do método da classe Product
   }
 }

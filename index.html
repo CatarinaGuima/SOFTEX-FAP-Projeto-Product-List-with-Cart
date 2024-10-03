@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <main id="container">
+    <div id="container">
       <section>
         <header>
           <h1 id="title">Desserts</h1>
@@ -25,20 +25,25 @@
           <!-- Os produtos serão renderizados aqui  -->
         </ul>
       </section>
-
-        <!-- Componente `Cart` -->
-      <section id="product-cart">
+      <!-- Componente `Cart` -->
+      <section class="product-cart">
         <aside>
-          <h2>Your Cart(0)</h2>
+          <h2 class="title-cart">Your Cart (<span>0</span>)</h2>
+          <ul class="list-cart">
+            <!-- List of cart -->
+          </ul>
           <img
             class="product-empty-cart"
             src="assets/images/illustration-empty-cart.svg"
             alt="product-empty-cart"
           />
           <p class="product-cart-message">Your added items will appear here</p>
+          <div class="order-total-cart">
+           <!-- Value of Order Total  -->
+          </div>
         </aside>
       </section>
-    </main>
+    </div>
     <footer>
       <div class="attribution">
         Challenge by
