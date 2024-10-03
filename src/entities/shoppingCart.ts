@@ -15,10 +15,6 @@ export class ShoppingCart {
     });
   }
 
-  static calculateOrderTotal() {
-    return this._orderTotal;
-  }
-
   static removeProduct(product: Product) {
     //Remove um produto do carrinho
     this._products = this._products.filter((item) => item.id !== product.id);
@@ -76,7 +72,7 @@ export class ShoppingCart {
           <span class="product-cart-quantity">${product.quantity}x</span>
           <span class="product-cart-price">@ $${product.price}</span>
           <span class="product-cart-total">$${product.total}</span>
-          <span><img class="product-cart-image" src="../assets/images/icon-remove-item.svg" alt="icon remove item" </span>
+          <span><img class="product-cart-icon" src="../assets/images/icon-remove-item.svg" alt="icon remove item" </span>
         </div>
       </div>
       <hr/>
@@ -89,8 +85,20 @@ export class ShoppingCart {
       orderTotalCart.innerHTML = `  
       <div class="order-total-cart">
        <span class="order-total-msg"><p>Order Total</p></span>
-       <span class="order-total-value">$${this.calculateOrderTotal()}</span>
-      </div>`;
+       <span class="order-total-value">$${this._orderTotal}</span>
+      </div>
+      `;
+    }
+    
+    const carboNeutral = document.querySelector(".carbon-neutral-cart");
+    if (!carboNeutral) return;
+    if (carboNeutral) {
+      carboNeutral.innerHTML = `
+     <div class="carbon-neutral-cart">
+      <img src="../assets/images/icon-carbon-neutral.svg" alt"" />
+      <p class="carbon-neutral-msg">This is a <strong>carbon-neutral</strong> delivery</p>
+     </div>
+    `;
     }
   }
 

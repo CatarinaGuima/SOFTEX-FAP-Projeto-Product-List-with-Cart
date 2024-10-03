@@ -9,7 +9,7 @@ $color-primary: hsl(14, 86%, 42%);
 $color-secondary: hsl(14, 65%, 9%);
 $color-background: hsl(13, 31%, 94%);
 $color-light: hsl(20, 50%, 98%);
-$color-mutedlight:  hsl(7, 20%, 60%);
+$color-mutedlight: hsl(7, 20%, 60%);
 $color-highlight: hsl(14, 25%, 72%);
 $color-muted: hsl(12, 20%, 44%);
 $font-family: "Red Hat Text", sans-serif;
@@ -30,8 +30,8 @@ body {
   padding: 2rem;
 }
 
-#container{
-display: flex;
+#container {
+  display: flex;
 }
 
 #title {
@@ -219,10 +219,9 @@ button.product-btn:hover {
   padding-right: 6rem;
 }
 
-.product-cart-image {
-  justify-items: center;
-  font-size: 8px;
-  border: 1.8px solid $color-muted;
+.product-cart-icon {
+  justify-items: flex-end;
+  border: 1px solid $color-highlight;
   border-radius: 50%;
   cursor: pointer;
   padding: 0.2rem;
@@ -236,19 +235,37 @@ button.product-btn:hover {
   font-size: 16px;
   font-weight: 600;
   color: $color-primary;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .order-total-msg {
-  font-size: 12px;
+  font-size: 14px;
   color: $color-muted;
 }
 
 .order-total-value {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bolder;
-  color: $color-secondary
-} 
+  color: $color-secondary;
+}
+
+.carbon-neutral-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  background-color: $color-background;
+  border-radius: 5%;
+}
+
+.carbon-neutral-msg {
+  margin: 0;
+  margin-left: 5px;
+  padding: 10px 0;
+  font-size: 12px;
+  color: $color-secondary;
+}
+
 
 .attribution {
   font-size: 10px;
@@ -256,9 +273,9 @@ button.product-btn:hover {
 }
 
 .attribution a {
-  color:$color-primary;
+  color: $color-primary;
 }
-  
+
 .attribution a:hover {
   color: $color-highlight;
 }

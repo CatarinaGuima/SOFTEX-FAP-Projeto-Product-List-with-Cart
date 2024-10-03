@@ -8,7 +8,7 @@ export class Product {
   private _price: number;
   private _category: string;
   private _imageUrl: string;
-  private _quantity: number = 0;
+  private _quantity: number = 1; // Define a quantidade inicial para 1
   private _total: number = 0;
 
   // Construtor da classe Product
@@ -17,6 +17,7 @@ export class Product {
     this._price = price;
     this._category = category;
     this._imageUrl = imageUrl;
+    this.updateTotal(); // Atualiza o total inicial com base na quantidade inicial
   }
 
   //Retorna o ID
@@ -75,7 +76,7 @@ export class Product {
 
   // Decrementa a quantidade do produto
   decrementQuantity() {
-    if (this._quantity >= 1) {
+    if (this._quantity > 1) {
       this._quantity--;
       this.updateCart();
       this.updateTotal();
@@ -93,8 +94,7 @@ export class Product {
     if (btnFood) {
       btnFood.addEventListener("click", () => {
         btnFood.classList.replace("product-btn", "qtd-food");
-       
-        
+
         // Inicializa o conteúdo
         this.updateContent(btnFood);
 
@@ -105,6 +105,9 @@ export class Product {
 
         // Adiciona os event listeners para incrementar e decrementar
         this.addQuantityControls(btnFood);
+
+        // Adiciona o produto ao carrinho ao clicar no botão, sem precisar incrementar a quantidade
+        this.updateCart();
       });
     }
   }
@@ -168,5 +171,7 @@ export class Product {
     }
 
     this.chooseQtdFood(); // Chama a instância do método da classe Product
+
+  
   }
 }
