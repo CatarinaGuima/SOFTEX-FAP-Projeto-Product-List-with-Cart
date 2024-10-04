@@ -172,6 +172,10 @@ button.product-btn:hover {
   border-radius: 50%;
 }
 
+.icons-qtd:hover {
+  background-color: $color-secondary;
+}
+
 .title-cart {
   margin-bottom: 1rem;
 }
@@ -251,19 +255,36 @@ button.product-btn:hover {
 
 .carbon-neutral-cart {
   display: flex;
+  margin-left: 12px;
+  width: 14rem;
   justify-content: center;
   align-items: center;
- 
   background-color: $color-background;
   border-radius: 5%;
 }
 
 .carbon-neutral-msg {
-  margin: 0;
-  margin-left: 5px;
+  margin: 0 5px;
   padding: 10px 0;
   font-size: 12px;
   color: $color-secondary;
+}
+
+.btn-confirm-order-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 20px;
+  padding: 0.8rem 5rem;
+  font-size: $font-size-base;
+  font-weight: 600;
+  background-color: $color-primary;
+  color: $color-light;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  
 }
 
 

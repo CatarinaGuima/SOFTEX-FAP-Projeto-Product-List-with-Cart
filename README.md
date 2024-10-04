@@ -1,6 +1,6 @@
-# Frontend Mentor - Product list with cart solution
+# ShoppingCart
 
-This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+Este projeto implementa um sistema de carrinho de compras totalmente funcional utilizando JavaScript. Ele permite adicionar, remover e listar produtos em um carrinho, além de calcular o valor total da compra e a quantidade de itens. O carrinho é atualizado dinamicamente no HTML
 
 ## Table of contents
 
@@ -16,22 +16,19 @@ This is a solution to the [Product list with cart challenge on Frontend Mentor](
 
 ### The challenge
 
-Users should be able to:
+Funcionalidades:
 
-- Add items to the cart and remove them
-- Increase/decrease the number of items in the cart
-- See an order confirmation modal when they click "Confirm Order"
-- Reset their selections when they click "Start New Order"
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- Adicionar produtos ao carrinho: O carrinho permite adicionar diferentes produtos, atualizando automaticamente a quantidade e o total do pedido.
+- Remover produtos do carrinho: Os produtos podem ser removidos do carrinho, com o total e a quantidade de itens sendo recalculados.
+- Cálculo dinâmico do total: A soma total dos preços dos produtos e a quantidade total de itens são recalculados a cada alteração no carrinho.
+- Interface dinâmica: Atualiza a lista de produtos no carrinho diretamente no DOM com cada ação, removendo a mensagem de carrinho vazio quando houver produtos.
 
 ### Screenshot
 
-![Design preview for the Product list with cart coding challenge](./preview.jpg)
+![Design preview for the Product list with cart coding challenge](image.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -42,10 +39,10 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
+- [**SCSS**](https://sass-lang.com/install/)
+- [**Vite**](https://vitejs.dev/guide/#command-line-interface) - Utilizado para configuração e build do projeto.
+- [**Tailwind Css**](https://tailwindcss.com/docs/guides/vite)
 
 ## Author
 

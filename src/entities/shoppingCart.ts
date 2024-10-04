@@ -100,6 +100,16 @@ export class ShoppingCart {
      </div>
     `;
     }
+
+    const btnConfirmOrder = document.querySelector(".confirm-order-cart");
+    if (btnConfirmOrder) {
+      btnConfirmOrder.innerHTML = `
+      <div>
+        <button class="btn-confirm-order-cart">Confirm Order</button>
+      </div>
+      `;
+    }
+
   }
 
   static get products() {
