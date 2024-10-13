@@ -115,10 +115,11 @@ export class Product {
   // Função para atualizar o conteúdo do botão
   private updateContent(btnFood: Element) {
     btnFood.innerHTML = `
-      <div id="decrement"><img class="icons-qtd" src="./assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
-      ${this.quantity} 
-      <div id="increment"><img class="icons-qtd" src="./assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
-    `;
+    <div id="decrement"><img class="icons-qtd" src="/assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
+    ${this.quantity} 
+    <div id="increment"><img class="icons-qtd" src="/assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
+  `;
+  
   }
 
   // Adiciona event listeners para os controles de quantidade
@@ -169,9 +170,6 @@ export class Product {
     } else {
       console.error("Elemento #product-container não encontrado no DOM.");
     }
-
     this.chooseQtdFood(); // Chama a instância do método da classe Product
-
-  
   }
 }

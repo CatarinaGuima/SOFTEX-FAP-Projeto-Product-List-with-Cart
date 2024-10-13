@@ -1,4 +1,5 @@
 # ShoppingCart
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1b530f25-3941-4b3c-b6c0-a585e198aa5f/deploy-status)](https://app.netlify.com/sites/dessertsfood/deploys)
 
 Este projeto implementa um sistema de carrinho de compras totalmente funcional utilizando JavaScript. Ele permite adicionar, remover e listar produtos em um carrinho, além de calcular o valor total da compra e a quantidade de itens. O carrinho é atualizado dinamicamente no HTML
 
