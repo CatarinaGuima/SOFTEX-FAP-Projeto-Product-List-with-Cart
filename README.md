@@ -25,11 +25,11 @@ Funcionalidades:
 
 ### Screenshot
 
-![Design preview for the Product list with cart coding challenge](image.png)
+![image](https://github.com/user-attachments/assets/315f10a4-a752-4e45-9aaa-b584e7c7f416)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [clique aqui](https://dessertsfood.netlify.app/)
 
 ## My process
 
