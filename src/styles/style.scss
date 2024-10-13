@@ -142,6 +142,9 @@ button.product-btn:hover {
 .product-cart {
   width: 25rem;
   height: 30rem;
+  object-fit: contain; 
+  max-height: 100%;
+  overflow: auto;
   margin-top: 2rem;
   margin-right: 6rem;
   padding: 1.5rem;

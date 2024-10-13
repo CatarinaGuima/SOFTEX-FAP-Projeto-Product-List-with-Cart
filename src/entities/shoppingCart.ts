@@ -109,7 +109,6 @@ export class ShoppingCart {
       </div>
       `;
     }
-
   }
 
   static get products() {
