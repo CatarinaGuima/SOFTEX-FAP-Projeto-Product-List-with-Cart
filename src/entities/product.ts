@@ -115,9 +115,9 @@ export class Product {
   // Função para atualizar o conteúdo do botão
   private updateContent(btnFood: Element) {
     btnFood.innerHTML = `
-    <div id="decrement"><img class="icons-qtd" src="/assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
+    <div id="decrement"><img class="icons-qtd" src="assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
     ${this.quantity} 
-    <div id="increment"><img class="icons-qtd" src="/assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
+    <div id="increment"><img class="icons-qtd" src="assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
   `;
   
   }
@@ -154,7 +154,7 @@ export class Product {
       this._name
     }" />
           <button class="product-btn">
-            <img src="./assets/images/icon-add-to-cart.svg" alt="icon-add-to-cart">
+            <img src="assets/images/icon-add-to-cart.svg" alt="icon-add-to-cart">
             <p>Add to Cart</p> 
           </button>
         </div>

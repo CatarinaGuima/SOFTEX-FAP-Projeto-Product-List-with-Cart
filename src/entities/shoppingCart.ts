@@ -72,7 +72,7 @@ export class ShoppingCart {
           <span class="product-cart-quantity">${product.quantity}x</span>
           <span class="product-cart-price">@ $${product.price}</span>
           <span class="product-cart-total">$${product.total}</span>
-          <span><img class="product-cart-icon" src="../assets/images/icon-remove-item.svg" alt="icon remove item" </span>
+          <span><img class="product-cart-icon" src="assets/images/icon-remove-item.svg" alt="icon remove item" </span>
         </div>
       </div>
       <hr/>
@@ -95,7 +95,7 @@ export class ShoppingCart {
     if (carboNeutral) {
       carboNeutral.innerHTML = `
      <div class="carbon-neutral-cart">
-      <img src="../assets/images/icon-carbon-neutral.svg" alt"" />
+      <img src="assets/images/icon-carbon-neutral.svg" alt"" />
       <p class="carbon-neutral-msg">This is a <strong>carbon-neutral</strong> delivery</p>
      </div>
     `;
