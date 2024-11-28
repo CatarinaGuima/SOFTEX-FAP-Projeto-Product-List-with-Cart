@@ -27,7 +27,6 @@ $box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
 body {
   font-family: $font-family;
   background-color: $color-background;
-  padding: 2rem;
 }
 
 #container {
@@ -36,6 +35,7 @@ body {
 
 #title {
   color: $color-secondary;
+  margin-top: 2rem;
   margin-left: 2rem;
   margin-bottom: 0.2rem;
   font-size: 2rem;
@@ -51,6 +51,43 @@ body {
   position: relative;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: 0 2rem;
+  background-color: #f9f0eb;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: $border-radius;
+}
+
+.nav-logo {
+  width: 10rem;
+  height: 8rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around; 
+  gap: 8rem; 
+  list-style: none;
+  margin-right: 20rem;
+}
+
+li a{
+  font-weight: 600;
+  text-decoration: none;
+  color: $color-secondary;
+  cursor: pointer;
+ 
+}
+
+ li a:hover {
+  color: $color-highlight;
+  transition: color 0.3s ease;
 }
 
 .product {
@@ -145,7 +182,7 @@ button.product-btn:hover {
   object-fit: contain; 
   max-height: 100%;
   overflow: auto;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-right: 6rem;
   padding: 1.5rem;
   background-color: $color-light;
@@ -175,8 +212,12 @@ button.product-btn:hover {
   border-radius: 50%;
 }
 
+.icons-qtd:hover path {
+  fill: $color-primary; 
+}
+
 .icons-qtd:hover {
-  background-color: $color-secondary;
+  background-color: $color-light;
 }
 
 .title-cart {
@@ -289,16 +330,16 @@ button.product-btn:hover {
   
 }
 
-.attribution {
+#attribution {
   font-size: 10px;
   text-align: center;
 }
 
-.attribution a {
+#attribution a {
   color: $color-primary;
 }
 
-.attribution a:hover {
+#attribution a:hover {
   color: $color-highlight;
 }
 

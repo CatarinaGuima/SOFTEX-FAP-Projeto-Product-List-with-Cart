@@ -15,11 +15,15 @@ export class ShoppingCart {
       0
     );
   }
+
   // Remove um produto do carrinho
   static removeProduct(product: Product) {
     this._products = this._products.filter((item) => item.id !== product.id);
     this.calculateTotals();
     this.updateCartUI();
+
+    // Redefine o botão do produto ao estado inicial
+    product.resetButton();
   }
 
   static addToCart(product: Product) {

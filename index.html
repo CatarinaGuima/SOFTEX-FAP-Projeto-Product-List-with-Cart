@@ -15,11 +15,19 @@
   </head>
 
   <body>
+    <header>
+      <nav class="nav">
+        <img class="nav-logo" src="/assets/images/Logo.png" alt="logo">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#product-list">Products</a></li>
+          <li><a href="#attribution">Contact</a></li>
+        </ul>
+      </nav>      
+    </header>
     <div id="container">
       <section>
-        <header>
-          <h1 id="title">Desserts</h1>
-        </header>
+        <h1 id="title">Desserts</h1>
         <ul id="product-list">
           <!-- Componente `Product` -->
           <!-- Os produtos serão renderizados aqui  -->
@@ -51,7 +59,7 @@
       </section>
     </div>
     <footer>
-      <div class="attribution">
+      <div id="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a

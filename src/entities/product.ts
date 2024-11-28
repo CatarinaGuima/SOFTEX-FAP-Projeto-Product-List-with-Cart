@@ -73,12 +73,39 @@ export class Product {
   // Atualiza o conteúdo do botão
   private updateContent(btnFood: HTMLElement) {
     btnFood.innerHTML = `
-      <div id="decrement"><img class="icons-qtd" src="/assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
-      ${this.quantity} 
-      <div id="increment"><img class="icons-qtd" src="/assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
-    `;
+      <div id="decrement">
+       <svg class="icons-qtd" xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2">
+        <path class="svg-path" fill="#fff" d="M0 .375h10v1.25H0V.375Z"/>
+       </svg>
+      </div>
+       ${this.quantity} 
+      <div id="increment">
+       <svg class="icons-qtd" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
+      </div>
+      `;
   }
 
+  resetButton() {
+    const productHTML = document.getElementById(this._id);
+  
+    if (productHTML) {
+      const btnFood = productHTML.querySelector<HTMLButtonElement>(".qtd-food");
+      const productImage = productHTML.querySelector<HTMLImageElement>(".product-image");
+  
+      if (btnFood) {
+        btnFood.classList.replace("qtd-food", "product-btn");
+        btnFood.innerHTML = `
+          <img src="/assets/images/icon-add-to-cart.svg" alt="Adicionar ao carrinho">
+          <p>Add to Cart</p>
+        `;
+      }
+  
+      if (productImage) {
+        productImage.classList.remove("bordered");
+      }
+    }
+  }
+  
   // Renderiza o produto no HTML
   render() {
     const productHTML = document.createElement("li");
@@ -87,7 +114,9 @@ export class Product {
 
     productHTML.innerHTML = `
       <div class="product-shop">
-        <img class="product-image" src="${this._imageUrl}" alt="${this._name}" />
+        <img class="product-image" src="${this._imageUrl}" alt="${
+      this._name
+    }" />
         <button class="product-btn">
           <img src="/assets/images/icon-add-to-cart.svg" alt="Adicionar ao carrinho">
           <p>Add to Cart</p> 
@@ -111,8 +140,10 @@ export class Product {
 
   // Adiciona eventos de clique
   private attachEvents(productHTML: HTMLElement) {
-    const btnFood = productHTML.querySelector<HTMLButtonElement>(".product-btn");
-    const productImage = productHTML.querySelector<HTMLImageElement>(".product-image");
+    const btnFood =
+      productHTML.querySelector<HTMLButtonElement>(".product-btn");
+    const productImage =
+      productHTML.querySelector<HTMLImageElement>(".product-image");
 
     if (!btnFood) return;
 
