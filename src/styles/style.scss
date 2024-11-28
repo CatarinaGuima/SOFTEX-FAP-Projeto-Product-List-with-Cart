@@ -183,7 +183,7 @@ button.product-btn:hover {
   margin-bottom: 1rem;
 }
 
-#product-list-cart {
+.product-list-cart {
   list-style: none;
   margin: 1rem 0.5rem;
 }
@@ -236,9 +236,8 @@ button.product-btn:hover {
 
 .order-total-cart {
   display: flex;
-  gap: 8rem;
-  align-items: center;
-  justify-content: center;
+  gap: 8.5rem;
+  justify-content: space-between;
   font-size: 16px;
   font-weight: 600;
   color: $color-primary;
@@ -246,12 +245,12 @@ button.product-btn:hover {
 }
 
 .order-total-msg {
-  font-size: 14px;
+  font-size: 0.8rem;
   color: $color-muted;
 }
 
 .order-total-value {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: bolder;
   color: $color-secondary;
 }
@@ -290,7 +289,6 @@ button.product-btn:hover {
   
 }
 
-
 .attribution {
   font-size: 10px;
   text-align: center;
@@ -307,4 +305,96 @@ button.product-btn:hover {
 .bordered {
   border: 2px solid $color-primary;
   border-radius: $border-radius;
+}
+
+.hidden {
+  display: none;
+}
+
+// Responsividade geral para telas pequenas
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  #container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  #product-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .product {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-cart {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+
+  .order-total-cart {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-confirm-order-cart {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .carbon-neutral-cart {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+}
+
+// Ajustes para telas muito pequenas (celulares)
+@media (max-width: 480px) {
+  #title {
+    font-size: 1.2rem;
+  }
+
+  .product-cart-message {
+    font-size: 12px;
+  }
+
+  .product-cart-name {
+    font-size: 12px;
+  }
+
+  .product-cart-quantity {
+    font-size: 12px;
+  }
+
+  .order-total-cart {
+    font-size: 14px;
+  }
+
+  .btn-confirm-order-cart {
+    font-size: 14px;
+  }
+
+  .carbon-neutral-msg {
+    font-size: 10px;
+  }
 }

@@ -31,6 +31,7 @@ export class Product {
   set quantity(quantity: number) {
     if (quantity >= 1) {
       this._quantity = quantity;
+      this.updateTotal();
     }
   }
 
@@ -58,65 +59,24 @@ export class Product {
 
   // Incrementa e decrementa quantidade
   incrementQuantity() {
-    this._quantity++;
-    this.updateTotal();
+    this.quantity++;
     this.updateCart();
   }
 
   decrementQuantity() {
-    if (this._quantity > 1) {
-      this._quantity--;
-      this.updateTotal();
+    if (this.quantity > 1) {
+      this.quantity--;
       this.updateCart();
     }
   }
 
-  // Escolhe a quantidade de cada prato
-  private chooseQtdFood() {
-    const idFood = document.getElementById(this._id);
-    const btnFood = idFood?.querySelector<HTMLButtonElement>(".product-btn");
-    const productImage = idFood?.querySelector<HTMLImageElement>(".product-image");
-
-    if (!btnFood || !idFood) return;
-
-    btnFood.addEventListener("click", () => {
-      btnFood.classList.replace("product-btn", "qtd-food");
-      this.updateContent(btnFood);
-
-      // Adiciona borda à imagem
-      productImage?.classList.add("bordered");
-
-      // Adiciona os eventos de incremento e decremento
-      this.addQuantityControls(btnFood);
-
-      // Adiciona o produto ao carrinho
-      this.updateCart();
-    });
-  }
-
   // Atualiza o conteúdo do botão
-  private updateContent(btnFood: Element) {
+  private updateContent(btnFood: HTMLElement) {
     btnFood.innerHTML = `
-      <div id="decrement"><img class="icons-qtd" src="./src/assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
+      <div id="decrement"><img class="icons-qtd" src="/assets/images/icon-decrement-quantity.svg" alt="Decrementar quantidade"></div>
       ${this.quantity} 
-      <div id="increment"><img class="icons-qtd" src="./src/assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
+      <div id="increment"><img class="icons-qtd" src="/assets/images/icon-increment-quantity.svg" alt="Incrementar quantidade"></div>
     `;
-  }
-
-  // Adiciona eventos de incremento e decremento
-  private addQuantityControls(btnFood: Element) {
-    const incrementBtn = btnFood.querySelector("#increment");
-    const decrementBtn = btnFood.querySelector("#decrement");
-
-    incrementBtn?.addEventListener("click", () => {
-      this.incrementQuantity();
-      this.updateContent(btnFood);
-    });
-
-    decrementBtn?.addEventListener("click", () => {
-      this.decrementQuantity();
-      this.updateContent(btnFood);
-    });
   }
 
   // Renderiza o produto no HTML
@@ -129,7 +89,7 @@ export class Product {
       <div class="product-shop">
         <img class="product-image" src="${this._imageUrl}" alt="${this._name}" />
         <button class="product-btn">
-          <img src="./src/assets/images/icon-add-to-cart.svg" alt="icon-add-to-cart">
+          <img src="/assets/images/icon-add-to-cart.svg" alt="Adicionar ao carrinho">
           <p>Add to Cart</p> 
         </button>
       </div>
@@ -140,12 +100,48 @@ export class Product {
       </div>
     `;
 
-    const productListHTM = document.querySelector("#product-list");
-    if (productListHTM) {
-      productListHTM.appendChild(productHTML);
-      this.chooseQtdFood(); // Chama a função para interatividade
+    const productListHTML = document.querySelector("#product-list");
+    if (productListHTML) {
+      productListHTML.appendChild(productHTML);
+      this.attachEvents(productHTML);
     } else {
       console.error("Elemento #product-list não encontrado no DOM.");
     }
+  }
+
+  // Adiciona eventos de clique
+  private attachEvents(productHTML: HTMLElement) {
+    const btnFood = productHTML.querySelector<HTMLButtonElement>(".product-btn");
+    const productImage = productHTML.querySelector<HTMLImageElement>(".product-image");
+
+    if (!btnFood) return;
+
+    btnFood.addEventListener("click", () => {
+      btnFood.classList.replace("product-btn", "qtd-food");
+      this.updateContent(btnFood);
+
+      // Adiciona borda à imagem
+      productImage?.classList.add("bordered");
+
+      // Atualiza o carrinho e adiciona controles de quantidade
+      this.updateCart();
+      this.addQuantityControls(btnFood);
+    });
+  }
+
+  // Adiciona eventos de incremento e decremento
+  private addQuantityControls(btnFood: HTMLElement) {
+    const incrementBtn = btnFood.querySelector("#increment");
+    const decrementBtn = btnFood.querySelector("#decrement");
+
+    incrementBtn?.addEventListener("click", () => {
+      this.incrementQuantity();
+      this.updateContent(btnFood);
+    });
+
+    decrementBtn?.addEventListener("click", () => {
+      this.decrementQuantity();
+      this.updateContent(btnFood);
+    });
   }
 }
