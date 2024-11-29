@@ -43,7 +43,6 @@ Funcionalidades:
 - [Styled Components](https://styled-components.com/) - For styles
 - [**SCSS**](https://sass-lang.com/install/)
 - [**Vite**](https://vitejs.dev/guide/#command-line-interface) - Utilizado para configuração e build do projeto.
-- [**Tailwind Css**](https://tailwindcss.com/docs/guides/vite)
 
 ## Author
 
