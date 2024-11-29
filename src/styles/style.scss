@@ -82,7 +82,6 @@ li a{
   text-decoration: none;
   color: $color-secondary;
   cursor: pointer;
- 
 }
 
  li a:hover {
@@ -224,9 +223,33 @@ button.product-btn:hover {
   margin-bottom: 1rem;
 }
 
+
+.product-cart-details {
+  display: flex;
+  flex-direction: column; 
+  margin-right: auto; 
+}
+
 .product-list-cart {
   list-style: none;
   margin: 1rem 0.5rem;
+}
+
+.product-list-cart-order {
+  display: flex;
+  list-style: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-cart-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .list-cart {
@@ -246,7 +269,19 @@ button.product-btn:hover {
   gap: 0.1rem;
 }
 
+.product-cart-infos-order {
+  display: flex;
+  gap: 1rem;
+}
+
 .product-cart-quantity {
+  font-size: 14px;
+  font-weight: 700;
+  color: $color-primary;
+  padding-right: 1rem;
+}
+
+.product-cart-quantity-order {
   font-size: 14px;
   font-weight: 700;
   color: $color-primary;
@@ -260,11 +295,25 @@ button.product-btn:hover {
   color: $color-mutedlight;
 }
 
+.product-cart-price-order {
+  width: 4rem;
+  font-size: 12.5px;
+  font-weight: 450;
+  color: $color-mutedlight;
+}
+
 .product-cart-total {
   font-size: 14px;
   font-weight: 450;
   color: $color-muted;
   padding-right: 6rem;
+}
+
+.product-cart-total-order {
+  display: flex;
+  font-weight: bold;
+  text-align: center;
+  margin-left: auto;
 }
 
 .product-cart-icon {
@@ -275,8 +324,14 @@ button.product-btn:hover {
   padding: 0.2rem;
 }
 
+.product-cart-icon:hover path {
+  fill: $color-secondary;
+  transition: fill 0.5s ease;
+}
+
 .order-total-cart {
   display: flex;
+  width: 100%;
   gap: 8.5rem;
   justify-content: space-between;
   font-size: 16px;
@@ -296,10 +351,10 @@ button.product-btn:hover {
   color: $color-secondary;
 }
 
+
 .carbon-neutral-cart {
   display: flex;
-  margin-left: 12px;
-  width: 14rem;
+  width: 100%;
   justify-content: center;
   align-items: center;
   background-color: $color-background;
@@ -318,6 +373,7 @@ button.product-btn:hover {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  width: 100%;
   margin-top: 20px;
   padding: 0.8rem 5rem;
   font-size: $font-size-base;
@@ -327,7 +383,6 @@ button.product-btn:hover {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  
 }
 
 #attribution {
@@ -350,6 +405,116 @@ button.product-btn:hover {
 
 .hidden {
   display: none;
+}
+
+.confirmation-order {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 25rem;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 2%;
+  z-index: 1000;
+  max-height: 80%;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.confirmation-order-box {
+  background-color: $color-light;
+  overflow-y: auto; /* Ativa o scroll vertical */
+  max-height: 60vh; /* Define um limite de altura para o conteúdo rolável */
+  margin: 2rem 0;
+  padding: 1.2rem;
+  border-radius: 2%;
+}
+
+
+.overlay {
+  filter: blur(15% transparent);
+}
+
+.confirmation-order h2 {
+  margin-top: 0;
+}
+
+.confirmation-order p {
+  font-size: 12px;
+  color: $color-mutedlight;
+  margin-bottom: 5px;
+}
+
+.confirmation-order-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.confirmation-order-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.confirmation-order-total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn-close-confirmation-order {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 20px;
+  padding: 0.8rem 5rem;
+  font-size: $font-size-base;
+  font-weight: 600;
+  background-color: $color-primary;
+  color: $color-light;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+hr {
+  border: none; 
+  height: 1px; 
+  background-color: #ddd; 
+  margin: 8px 0; 
+  opacity: 0.7; 
+}
+
+/* Estiliza a barra de rolagem geral */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+  height: 12px; /* Altura da barra horizontal */
+}
+
+/* Estiliza o fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #f4f4f4; /* Cor do fundo da barra */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Estiliza a alça (thumb) da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Cor da alça */
+  border-radius: 8px; /* Bordas arredondadas */
+  border: 3px solid #f4f4f4; /* Espaço interno entre a alça e o track */
+}
+
+/* Estiliza a alça da barra de rolagem ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cor ao passar o mouse */
 }
 
 // Responsividade geral para telas pequenas
@@ -403,6 +568,7 @@ button.product-btn:hover {
   }
 
   .carbon-neutral-cart {
+   
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;

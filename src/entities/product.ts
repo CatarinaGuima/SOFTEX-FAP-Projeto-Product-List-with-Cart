@@ -2,6 +2,7 @@ import { v4 as randomUUID } from "uuid";
 import { ShoppingCart } from "./shoppingCart";
 
 export class Product {
+  [x: string]: any;
   private _id: string = randomUUID();
   private _quantity: number = 1;
   private _total: number = 0;
@@ -16,6 +17,9 @@ export class Product {
   }
 
   // Getters e Setters
+  get imageUrl() {
+    return this._imageUrl;
+  }
   get id() {
     return this._id;
   }
